@@ -3,16 +3,12 @@ package my.project.ShortUrlService;
 import org.apache.commons.text.RandomStringGenerator;
 
 class CodeGenerator {
-    private RandomStringGenerator randomStringGenerator;
+    private final RandomStringGenerator randomStringGenerator;
 
     public CodeGenerator() {
         this.randomStringGenerator = new RandomStringGenerator
                 .Builder().filteredBy(c -> isLatinLetterOrDigit(c))
                 .build();
-    }
-
-    public String generate(int length) {
-        return randomStringGenerator.generate(length);
     }
 
     //проверяем
@@ -24,6 +20,10 @@ class CodeGenerator {
                 || ('_' == codePoint)
                 || ('-' == codePoint);
 
+    }
+
+    public String generate(int length) {
+        return randomStringGenerator.generate(length);
     }
 
 }

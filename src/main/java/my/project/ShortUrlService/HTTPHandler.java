@@ -17,10 +17,10 @@ public class HTTPHandler {
     void requestTaker() {
         post("/", (request, response) -> {
             String url = request.body();
-            logger.info("***** \n Получена ссылка от Клиента: "+ url);
+            logger.info("***** \n Получена ссылка от Клиента: " + url);
             ShortUrlService shortUrlService = new ShortUrlService();
             String shortUrl = shortUrlService.getShortUrl(url);
-            logger.info("Отправлена короткая ссылка Клиенту: "+ shortUrl + "\n *****");
+            logger.info("Отправлена короткая ссылка Клиенту: " + shortUrl + "\n *****");
             return shortUrl;
         });
         get("/:url", (request, response) -> {

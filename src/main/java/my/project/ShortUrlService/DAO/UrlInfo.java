@@ -1,18 +1,24 @@
-package my.project.ShortUrlService;
+package my.project.ShortUrlService.DAO;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.sql.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.sql.Timestamp;
 
+@Entity
+@Table(name = "Urls")
 public class UrlInfo {
-    @JsonProperty("id")
-    private int id;
-    @JsonProperty("hash")
+
+    @Column(name = "id")
+    private Integer id;
+    @Column(name = "hash")
     private String hash;
-    @JsonProperty("originalurl")
+    @Id
+    @Column(name = "originalurl")
     private String originalUrl;
-    @JsonProperty("createdAt")
+    @Column(name = "createdAt")
     private Timestamp createdAt;
 
     public UrlInfo() {
