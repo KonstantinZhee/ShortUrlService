@@ -9,3 +9,5 @@ If url is in SQL data base - service make query to SQL about short url (hash) an
 
 2. Service takes short (hash) url  from http GET-request. 
 If short (hash) url is in SQL data base - service make query to SQL about original url (hash) and redirect Client original url. If short-url isn`t in SQL data base service do nothing.
+
+< Here is another branch  "adding_Hibernate" with similar service functioning with Hibernate framework. >
